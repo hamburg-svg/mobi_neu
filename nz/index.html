@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta autor="r. sussbauer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobilitätswoche</title>
+
+    <!--Tab Vorschaubild-->
+    <link rel="shortcut icon" href="images/user.jpg" type="image/jpg">
+
+    <!--Stile einfügen-->
+    <link rel="stylesheet" href="main.css">
+
+    <!-- Font awesome einbauen-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+        integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+        crossorigin=""></script>
+
+    <!--Fullscreen plugin-->
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'
+        rel='stylesheet' />
+
+    <!--mini map plugin-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.min.js"
+        integrity="sha512-WL3nAJlWFKoDShduxQRyY3wkBnQsINXdIfWIW48ZaPgYz1wYNnxIwFMMgigzSgjNBC2WWZ8Y8/sSyUU6abuF0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"
+        integrity="sha512-efbAfGnrnjA+hLwOLu91W034fBGPsMwZMVCTwLUI2PDX/m7rOiuhYZ+D2mZ8rKcpC/I/7pdgoL8T4eYvMHNoQg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!--Leaflet Providers plugin-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.13.0/leaflet-providers.min.js"
+        integrity="sha512-5EYsvqNbFZ8HX60keFbe56Wr0Mq5J1RrA0KdVcfGDhnjnzIRsDrT/S3cxdzpVN2NGxAB9omgqnlh4/06TvWCMw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- eigene Stile und Hauptskript -->
+    <link rel="stylesheet" href="main.css">
+    <script defer src="main.js"></script>
+
+    <!--Kartenskript-->
+    <script defer src="main.js"></script>
+
+<body>
+
+    <main class="shadow">
+        <header>
+            <img class="banner" src="images/header.jpg"
+                alt="Schiff im Vordergrund, Bucht und bewaldeter Hügel im Hintergrund.">
+            <a href="https://www.lra-gap.de/de/"><img src="images/user.jpg" class="user shadow" alt="LKGaPa"></a>
+
+        </header>
+        <article>
+            <h1> Mobilitätswoche des LK Ga.-Pa.</h1>
+            <h2><em>Karte zur Erhebung der Gefahrenstellen im Schulweg</em></h2>
+            <p> <strong>Picton </strong> (Māori: Waitohi) ist eine Hafenstadt im Marlborough District auf der Südinsel
+                von Neuseeland.
+                (Quelle: <a href="https://de.wikipedia.org/wiki/Picton_(Neuseeland)">Wikipedia</a>)
+
+                <figure>
+                    <!-- <img src="images/attraction.jpg" -->
+                        <!-- alt="Eine Meeresbucht mit Strand, Booten und im Hintegrund eine Stadt."> -->
+                    </i>
+                    <figcaption> <i class="fa-solid fa-camera"></i> Picton ist eine Hafenstadt im Norden der
+                        Südinsel von Neuseeland und Anleger der
+                        Fähren, die zwischen der Nord- und Südinsel verkehren. Die Stadt mit etwa 3000 Einwohner liegt
+                        am Queen Charlotte Sound. Bild: <a
+                            href="https://commons.wikimedia.org/wiki/Category:Picton,_New_Zealand?uselang=de#/media/File:00_1131_Picton_-_Neuseeland.jpg">W.
+                            Bulach</a>
+                    </figcaption>
+                </figure>
+
+                <a -->
+                    <h3>Übersichtskarte</h3>
+                    <div id="map">
+                    </div>
+                    <div>
+                        <nav id="navigation"> </nav>
+                    </div>
+
+                    <h3>Links</h3>
+                    <ul>
+                        <li><a href="http://www.visitpicton.co.nz/">Visitor Information Guide Picton</a></li>
+                        <li><a
+                                href="https://www.greatjourneysofnz.co.nz/explore-nz/top-places-to-visit-in-nz/picton-2/">Picton:
+                                Top Places to visit</a></li>
+                        <li><a href="https://en.wikivoyage.org/wiki/Picton_(New_Zealand)">Wikivoyage: Picton</a></li>
+                    </ul>
+        </article>
+        <!-- Read the Formbutton docs at formspree.io/formbutton/docs. See more examples at codepen.io/formspree -->
+  <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
+  <script>
+    /* paste this line in verbatim */
+    window.formbutton = window.formbutton || function () {
+      (formbutton.q = formbutton.q || []).push(arguments)
+    };
+    /* customize formbutton below*/
+    formbutton("create", {
+      action: "https://formspree.io/f/mbjwbbwv",
+      title: "Was möchtest du sagen?",
+      fields: [{
+          type: "textarea",
+          label: "Deine Koordinaten einfügen (Strg+V oder Tippen+Einfügen) ",
+          name: "koordinaten",
+          required: true,
+          placeholder: "deine koordinaten"
+        },
+        {
+          type: "textarea",
+          label: "Was möchtest du dazu sagen?",
+          name: "nachricht",
+          placeholder: "Was magst du sagen?",
+        },
+        {
+          type: "submit"
+        }
+      ],
+      styles: {
+        title: {
+          backgroundColor: "green"
+        },
+        button: {
+          backgroundColor: "green"
+        }
+      }
+    });
+  </script>
+        <footer>
+            <nav>
+                <a class="back" href="https://voitmax.github.io/nz/index.html"> <i
+                        class="fa-solid fa-circle-arrow-left"></i> weitereführende Information </a>
+                <a class="next" href="https://joelrl1.github.io/nz/"> weitereführende Information <i
+                        class="fa-solid fa-circle-arrow-right"></i> </a>
+            </nav>
+
+    </main>
+    </footer>
+    </p>
+</body>
+
+</html>

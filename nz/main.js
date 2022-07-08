@@ -1,7 +1,7 @@
 /* Neuseelandreise Skript */
 // einzeiliger Kommentar
 
-let zoom = 11;
+let zoom = 15;
 
 // Baselayer 
 let startLayer = L.tileLayer.provider("Stadia.Outdoors");
@@ -10,11 +10,20 @@ let startLayer = L.tileLayer.provider("Stadia.Outdoors");
 let map = L.map('map').setView([47.4916945, 11.0954984], 15);
 
 startLayer.addTo(map);
+//Controll Coordinates
+let c = L.Control.Coordinates();
+c.addTo(map);
 
-// Maßstab hinzufügen
-L.control.scale({
-    imperial: false
-}).addTo(map);
+function onMapClick(e) {
+    c.setCoordinates(e);
+}
+
+map.on('click', onMapClick);
+
+// // Maßstab hinzufügen
+// L.control.scale({
+//     imperial: false
+// }).addTo(map);
 
 L.control.fullscreen().addTo(map);
 
@@ -35,6 +44,7 @@ let layerControl = L.control.layers({
     "Stamen Watercolor": L.tileLayer.provider("Stamen.Watercolor"),
 
 }).addTo(map);
+
 
 layerControl.expand()
 /*

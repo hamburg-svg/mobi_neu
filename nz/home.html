@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mobilitätswoche</title>
+	<meta charset="utf-8" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+<link rel="stylesheet" href="t.css" />
+ <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+</head>
+<body class="single-map">
+	<div id="map"></div>
+	<script src="t.js"></script>
+	<script>
+
+	
+	var map = L.map('map').setView([47.4923, 11.0960], 15);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+
+// Object.keys(school).forEach(function(key, i) {
+// 	var coord = school[key];
+// 	var icon = L.divIcon({className: 'school-label'});
+// 	var mark = L.marker(coord, {icon: icon}).addTo(map);
+// 	mark.bindTooltip(key, {permanent: true});
+// })
+		var c = new L.Control.Coordinates();
+		c.addTo(map);
+
+		function onMapClick(e) {	
+			c.setCoordinates(e);
+		}
+		function onMapHover(e) {
+			c.bindCircle(e);
+		}
+
+		map.on('click', onMapClick);
+		map.on('mousemove', onMapHover);
+
+	</script>
+     <!-- Read the Formbutton docs at formspree.io/formbutton/docs. See more examples at codepen.io/formspree -->
+  <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
+  <script>
+    /* paste this line in verbatim */
+    window.formbutton = window.formbutton || function () {
+      (formbutton.q = formbutton.q || []).push(arguments)
+    };
+    /* customize formbutton below*/
+    formbutton("create", {
+      action: "https://formspree.io/f/mbjwbbwv",
+      title: "Was möchtest du sagen?",
+      fields: [{
+          type: "textarea",
+          label: "Deine Koordinaten einfügen (Strg+V oder Tippen+Einfügen) ",
+          name: "koordinaten",
+          required: true,
+          placeholder: "deine koordinaten"
+        },
+        {
+          type: "textarea",
+          label: "Was möchtest du dazu sagen?",
+          name: "nachricht",
+          placeholder: "Was magst du sagen?",
+        },
+        {
+          type: "submit"
+        }
+      ],
+      styles: {
+        title: {
+          backgroundColor: "green"
+        },
+        button: {
+          backgroundColor: "green"
+        }
+      }
+    });
+  </script>
+</body>
+</html>

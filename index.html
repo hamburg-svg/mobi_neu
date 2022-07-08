@@ -9,6 +9,8 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
 <link rel="stylesheet" href="t.css" />
  <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+ <link rel="stylesheet" href="dist/leaflet-control-condended-attribution.css" />
+<script type="text/javascript" src="dist/leaflet-control-condended-attribution.js"></script>
 </head>
 <body class="single-map">
 	<div id="map"></div>
@@ -21,6 +23,7 @@ L.tileLayer('https://tileserver.memomaps.de/tilegen/{z}/{x}/{y}.png',  {
 	maxZoom: 18,
 	attribution: 'Map <a href="https://memomaps.de/">memomaps.de</a> <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map)
+
 
 // Object.keys(school).forEach(function(key, i) {
 // 	var coord = school[key];

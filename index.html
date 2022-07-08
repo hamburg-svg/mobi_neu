@@ -53,19 +53,19 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     /* customize formbutton below*/
     formbutton("create", {
       action: "https://formspree.io/f/mbjwbbwv",
-      title: "Was möchtest du sagen?",
+      title: "Erklär die Gefahrenstelle:",
       fields: [{
           type: "textarea",
-          label: "Deine Koordinaten einfügen (Strg+V oder Tippen+Einfügen) ",
+          label: "Deine Koordinaten hier einfügen: ",
           name: "koordinaten",
           required: true,
-          placeholder: "deine koordinaten"
+          placeholder: "deine koordinaten (Strg+V oder Tippen+Einfügen)"
         },
         {
           type: "textarea",
-          label: "Was möchtest du dazu sagen?",
+          label: "Was ist hier gefährlich?",
           name: "nachricht",
-          placeholder: "Was magst du sagen?",
+          placeholder: "Erkläre kurz die Gefahrenstelle.",
         },
         {
           type: "submit"

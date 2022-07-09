@@ -2,18 +2,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Mobilitätswoche</title>
+	<title>Mobilitätswoche im LK GaPa</title>
 	<meta charset="utf-8" />
-
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
-<link rel="stylesheet" href="t.css" />
- <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
- <link rel="stylesheet" href="dist/leaflet-control-condended-attribution.css" />
-<script type="text/javascript" src="dist/leaflet-control-condended-attribution.js"></script>
+  <!--Tab Vorschaubild-->
+  <link rel="shortcut icon" href="images/user.jpg" type="image/jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!--Haupt-Stylesheet-->
+  <link rel="stylesheet" href="t.css" />
+  
+  <!--Leaflet-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+  
+  <!--Content Controll-->
+  <link rel="stylesheet" href="dist/leaflet-control-condended-attribution.css" />
+  <script type="text/javascript" src="dist/leaflet-control-condended-attribution.js"></script>
 </head>
 <body class="single-map">
 	<div id="map"></div>
+
+  <!--Haupt-Skript-->
 	<script src="t.js"></script>
 	<script>
 
@@ -21,7 +30,7 @@
 
 L.tileLayer('https://tileserver.memomaps.de/tilegen/{z}/{x}/{y}.png',  {
 	maxZoom: 18,
-	attribution: '<a href="https://memomaps.de/">SimpleAlps, 2022</a>,Map <a href="https://memomaps.de/">memomaps</a> <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+	attribution: '<a href="http://simplealps.com/">SimpleAlps, 2022</a>,Map <a href="https://memomaps.de/">memomaps</a> <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map)
 
 
@@ -44,6 +53,14 @@ L.tileLayer('https://tileserver.memomaps.de/tilegen/{z}/{x}/{y}.png',  {
 		map.on('click', onMapClick);
 		map.on('mousemove', onMapHover);
 
+
+    var popup = L.popup({
+          closeButton: false,
+          autoClose: false
+        })
+        .setLatLng([47.4923, 11.0960])
+        .setContent('<h1>Tippe auf die Karte, kopiere die Koordinaten oben rechts und füge sie unten in das Formular ein.</h1>')
+        .openOn(map);
 	</script>
      <!-- Read the Formbutton docs at formspree.io/formbutton/docs. See more examples at codepen.io/formspree -->
   <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>

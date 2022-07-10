@@ -28,9 +28,9 @@
 
 	var map = L.map('map').setView([47.4923, 11.0960], 15);
 
-L.tileLayer('https://tileserver.memomaps.de/tilegen/{z}/{x}/{y}.png',  {
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',  {
 	maxZoom: 18,
-	attribution: '<a href="http://simplealps.com/">SimpleAlps, 2022</a>,Map <a href="https://memomaps.de/">memomaps</a> <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	attribution: '<a href="http://simplealps.com/">SimpleAlps, 2022</a>,<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map)
 
 

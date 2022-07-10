@@ -56,13 +56,13 @@ L.Control.Coordinates = L.Control.extend({
 		this._copyBtn = L.DomUtil.create('button', 'copy-button' , container);
 		this._input = L.DomUtil.create('input', 'coord-input' , container);
 		
-		L.DomUtil.get(this._copyBtn).innerHTML = 'Copy';
+		L.DomUtil.get(this._copyBtn).innerHTML = 'Kopieren';
 		L.DomUtil.get(this._copyBtn).addEventListener('click', function(event) {
 			var copyTextarea = document.querySelector('.coord-input');
 			  copyTextarea.select();
 
 			  try {
-			    var successful = document.execCommand('copy');
+			    var successful = document.execCommand('Kopieren');
 			    var msg = successful ? 'successful' : 'unsuccessful';
 			    console.log('Copying text command was ' + msg);
 				L.DomUtil.removeClass(this, 'active');
@@ -118,7 +118,7 @@ L.Control.Coordinates = L.Control.extend({
 		if (obj.latlng) {
 			
 			if (!this.cursorProjection) { 
-				this.cursorProjection = L.circle([obj.latlng.lat, obj.latlng.lng], {radius: 1000, weight: 0}).addTo(map); 
+				this.cursorProjection = L.circle([obj.latlng.lat, obj.latlng.lng], {radius: 200, weight: 0}).addTo(map); 
 			}
 			else { 
 				this.cursorProjection.setLatLng([obj.latlng.lat, obj.latlng.lng])

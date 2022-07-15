@@ -15,11 +15,14 @@ L.Control.Coordinates = L.Control.extend({
 		position: 'topright',
 		precision: 4,
 		cityCoord: {
-			St_Irmengard_Schulen:[[47.4964, 11.1034], 'Irmengard-Schulen'],
-			Werdenfels_Gymnasium: [[47.4931, 11.1016], 'Werdenfels-Gymnasium'],
-			Schule_3: [[47.4964, 11.1065], 'Schütte-Schule'],			
-			Schule_4: [[47.4960, 11.1000], 'Zugspitz-Realschule'],
-			Schule_5: [[47.4877, 11.1061], 'Beruf- und Wirtschaftschule'],
+			Garmisch:[[47.4918, 11.0836], 'Garmisch'],
+			Partenkirchen:[[47.4942, 11.1054], 'Partenkirchen'],
+			Grainau: [[47.4734, 11.0263], 'Grainau'],
+			Mittenwald: [[47.4416, 11.2637], 'Mittenwald'],			
+			Farchant: [[47.5313, 11.1134], 'Farchant'],
+			Oberau: [[47.5612, 11.1333], 'Oberau'],
+			Murnau: [[47.6764, 11.1995], 'Murnau'],
+
 		},
 		},
 		

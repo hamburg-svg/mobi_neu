@@ -19,7 +19,7 @@
 	max-width: 700px;
 }
 .leaflet-control-coordinates {
-	background: white;
+	background: #12a31b;
 	border-radius: 4px;
 	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
 	cursor: pointer;
@@ -88,7 +88,7 @@ button ::-moz-focus-inner {
 	border: none;
 	box-shadow: none;
 	color:#8934d8;
-	/*font-weight: bold;*/
+	font-weight: bold;
 }
 .home-tooltip{
 
@@ -112,7 +112,7 @@ button ::-moz-focus-inner {
     height:15px;
     }
   .custom-popup .leaflet-popup-tip {
-      background: transparent;
+      background: #12a31b;
       border: none;
       box-shadow: none;
     }

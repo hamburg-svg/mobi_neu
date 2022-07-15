@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Mobilitätswoche im LK GaPa</title>
+	<title>Deine Gefahrenkarte</title>
 	<meta charset="utf-8" />
   <!--Tab Vorschaubild-->
   <link rel="shortcut icon" href="images/user.jpg" type="image/jpg">
@@ -31,17 +31,17 @@
 	<script>
 	var companies = {
 		St_Irmengard_Schulen: [47.4957, 11.1037],
-		// Ciklum2: [50.438579, 30.523105],
+		Grund_Mittelschule_Mittenwald: [47.4376, 11.2622],
 		Werdenfels_Gymnasium: [47.4931, 11.1016],
 		Buergermeister_Schuette_Schule: [47.4977, 11.1103],
 		Zugspitz_Realschule: [47.4963, 11.0982],
 		Beruf_und_Wirtschaftschule: [47.4877, 11.1061],
 		Schule_am_Groeben: [47.4911, 11.0709],
 		Schule_Holz_und_Gestaltung: [47.4928, 11.1101],
-		// Netcracker: [50.420402, 30.528942],
-		// Miratech: [50.447575, 30.422399],
-		// Innovecs: [50.446572, 30.423697],
-		// EVO: [50.404759, 30.680041]
+		Grundschule_Kruen: [47.4376, 11.2622],
+		Christopherus_Schule: [47.5215, 11.1122],
+		Kloster_Ettal: [47.5696, 11.0947],
+		Grund_Mittelschule_Oberammergau: [47.5960, 11.0674]
 	};
 	var map = L.map('map').setView([47.4923, 11.0960], 15);
 
@@ -60,7 +60,7 @@
   // }).addTo(map);
 L.tileLayer('https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png',  {
 	maxZoom: 20,
-	attribution: '<a href="https://robert.simplealps.com/">Robert Sußbauer (SimpleAlps, 2022)</a>, Kartendaten <a href="https://www.openstreetmap.org/copyright">  © OpenStreetMap</a>'
+	attribution: '<a href="http://robertsussbauer.com/">Robert Sußbauer (SimpleAlps, 2022)</a>, Kartendaten <a href="https://www.openstreetmap.org/copyright">  © OpenStreetMap</a>'
 }).addTo(map)
 
 
@@ -140,10 +140,10 @@ var sevendIcon = new LeafIcon({iconUrl: '/icons/number_7.png'});
       ],
       styles: {
         title: {
-          backgroundColor: "green"
+          backgroundColor: "#12a31b"
         },
         button: {
-          backgroundColor: "green"
+          backgroundColor: "#12a31b"
         }
       }
     });

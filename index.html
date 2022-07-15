@@ -23,9 +23,23 @@
 	<div id="map"></div>
 
   <!--Haupt-Skript-->
+  
 	<script src="t.js"></script>
 	<script>
-
+	var companies = {
+		St_Irmengard_Schulen: [47.4957, 11.1037],
+		// Ciklum2: [50.438579, 30.523105],
+		Werdenfels_Gymnasium: [47.4931, 11.1016],
+		Buergermeister_Schuette_Schule: [47.4977, 11.1103],
+		Zugspitz_Realschule: [47.4963, 11.0982],
+		Beruf_und_Wirtschaftschule: [47.4877, 11.1061],
+		Schule_am_Groeben: [47.4911, 11.0709],
+		Schule_Holz_und_Gestaltung: [47.4928, 11.1101],
+		Netcracker: [50.420402, 30.528942],
+		Miratech: [50.447575, 30.422399],
+		Innovecs: [50.446572, 30.423697],
+		EVO: [50.404759, 30.680041]
+	};
 	var map = L.map('map').setView([47.4923, 11.0960], 15);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',  {
@@ -34,12 +48,13 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',  {
 }).addTo(map)
 
 
-// Object.keys(school).forEach(function(key, i) {
-// 	var coord = school[key];
-// 	var icon = L.divIcon({className: 'school-label'});
-// 	var mark = L.marker(coord, {icon: icon}).addTo(map);
-// 	mark.bindTooltip(key, {permanent: true});
-// })
+
+Object.keys(companies).forEach(function(key, i) {
+	var coord = companies[key];
+	var icon = L.divIcon({className: 'comp-label'});
+	var mark = L.marker(coord, {icon: icon}).addTo(map);
+	mark.bindTooltip(key, {permanent: true});
+})
 		var c = new L.Control.Coordinates();
 		c.addTo(map);
 
@@ -56,9 +71,9 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',  {
 
     var popup = L.popup({
           closeButton: true,
-          autoClose: false
+          autoClose: true
         })
-        .setLatLng([47.4923, 11.0960])
+        .setLatLng([47.4868, 11.0793])
         .setContent('<h1>Hallo und Willkomen zur interaktiven Karte!</h1><h2> Hier kannst du alle Gefahrenstellen auf deinem Schulweg in die Karte einzeichnen.</h2><p>Eine Anleitung findest du hier (öffnet sich in einem neuen Fenster):</p>                            <a href="anleitung.pdf"target="_blank"><p>A N L E I T U N G</p></a>')
         .openOn(map);
 
@@ -74,29 +89,6 @@ var fifthIcon = new LeafIcon({iconUrl: '/icons/number_5.png'});
 var sixtIcon = new LeafIcon({iconUrl: '/icons/number_6.png'});
 var sevendIcon = new LeafIcon({iconUrl: '/icons/number_7.png'});
 
-L.marker([47.4964, 11.1034],  {icon: startIcon})
-    .bindPopup('<h1>St. Irmengard-Schulen</h1>').addTo(map)
-
- 
-
- L.marker([44.841793,5.552223], {icon: secondIcon})
-    .bindPopup('<h1>Erstbesteigung des Mont Aiguille im Jahr 1492 </h1> ')
-    .addTo(map)
-
-L.marker([45.89345978,7.25323710],  {icon: thirdIcon})
-    .bindPopup('<h1>Im Jahr 1779: Murith bestieg den Mont Vélan (3731 m ü NN.)</h1>').addTo(map)
-    
-L.marker([45.83089911 ,  6.86511039,], {icon: fourthIcon})
-    .bindPopup('<h1>Erstbesteigung des Mont Blanc</h1>').addTo(map)
-
-L.marker([46.5367, 7.9626], {icon: fifthIcon})
-    .bindPopup('<h1>1811: Erstbesteigung der Jungfrau (4158 m. ü. NN.) </h1>   ').addTo(map)
-
-L.marker([46.5899, 8.1182,], {icon: sixtIcon})
-    .bindPopup('<h1>Die Goldenen Jahre des Alpinismus  </h1>  ').addTo(map)
-
-L.marker([45.004722, 6.308611,], {icon: sevendIcon})
-    .bindPopup('<h1> Die Silbernen Jahre des Alpinismus </h1>   ').addTo(map)
 
 	</script>
 

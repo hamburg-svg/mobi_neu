@@ -14,13 +14,13 @@ L.Control.Coordinates = L.Control.extend({
 	options: {
 		position: 'topright',
 		precision: 4,
-		// cityCoord: {
-		// 	kharkiv:[[49.984353, 36.232946], 'Харків'],
-		// 	lviv: [[49.843075, 24.029400], 'Львів'],
-		// 	odesa: [[46.471713, 30.704227], 'Одеса'],			
-		// 	dnipro: [[48.470131, 35.017922], 'Дніпро'],
-		// 	kyiv: [[50.442508, 30.522791], 'Київ'],
-		// },
+		cityCoord: {
+			St_Irmengard_Schulen:[[47.4964, 11.1034], 'Irmengard-Schulen'],
+			Werdenfels_Gymnasium: [[47.4931, 11.1016], 'Werdenfels-Gymnasium'],
+			Schule_3: [[47.4964, 11.1065], 'Schütte-Schule'],			
+			Schule_4: [[47.4960, 11.1000], 'Zugspitz-Realschule'],
+			Schule_5: [[47.4877, 11.1061], 'Beruf- und Wirtschaftschule'],
+		},
 		},
 		
 
@@ -56,7 +56,7 @@ L.Control.Coordinates = L.Control.extend({
 		this._copyBtn = L.DomUtil.create('button', 'copy-button' , container);
 		this._input = L.DomUtil.create('input', 'coord-input' , container);
 		
-		L.DomUtil.get(this._copyBtn).innerHTML = 'Kopieren';
+		L.DomUtil.get(this._copyBtn).innerHTML = 'Kopiere deine Koordinaten:';
 		L.DomUtil.get(this._copyBtn).addEventListener('click', function(event) {
 			var copyTextarea = document.querySelector('.coord-input');
 			  copyTextarea.select();
@@ -78,7 +78,7 @@ L.Control.Coordinates = L.Control.extend({
 		function makeCityBtn(btn, label, coord) {
 			L.DomUtil.get(btn).innerHTML = label;
 			L.DomUtil.get(btn).addEventListener('click', function(event) {
-				context.flyTo(coord, 11)
+				context.flyTo(coord, 18)
 			})
 
 		}

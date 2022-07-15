@@ -121,7 +121,7 @@ L.Control.Coordinates = L.Control.extend({
 		if (obj.latlng) {
 			
 			if (!this.cursorProjection) { 
-				this.cursorProjection = L.circle([obj.latlng.lat, obj.latlng.lng], {radius: 200, weight: 0}).addTo(map); 
+				this.cursorProjection = L.circle([obj.latlng.lat, obj.latlng.lng], {radius: 100, weight: 5, color: '#12a31b'}).addTo(map); 
 			}
 			else { 
 				this.cursorProjection.setLatLng([obj.latlng.lat, obj.latlng.lng])

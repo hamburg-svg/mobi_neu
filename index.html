@@ -59,8 +59,45 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',  {
           autoClose: false
         })
         .setLatLng([47.4923, 11.0960])
-        .setContent('<h2>Eine Anleitung findest du hier (öffnet sich in einem neuen Fenster):</h2>                            <a href="anleitung.pdf"target="_blank"><h2>A N L E I T U N G</h2></a>')
+        .setContent('<h1>Hallo und Willkomen zur interaktiven Karte!</h1><h2> Hier kannst du alle Gefahrenstellen auf deinem Schulweg in die Karte einzeichnen.</h2><p>Eine Anleitung findest du hier (öffnet sich in einem neuen Fenster):</p>                            <a href="anleitung.pdf"target="_blank"><p>A N L E I T U N G</p></a>')
         .openOn(map);
+
+        
+var startIcon = new LeafIcon({iconUrl: '/icons/number_1.png'});
+
+var secondIcon = new LeafIcon({iconUrl: '/icons/number_2.png'});
+var thirdIcon = new LeafIcon({iconUrl: '/icons/number_3.png'});
+
+var fourthIcon = new LeafIcon({iconUrl: '/icons/number_4.png'});
+var fifthIcon = new LeafIcon({iconUrl: '/icons/number_5.png'});
+
+var sixtIcon = new LeafIcon({iconUrl: '/icons/number_6.png'});
+var sevendIcon = new LeafIcon({iconUrl: '/icons/number_7.png'});
+
+L.marker([47.4964, 11.1034],  {icon: startIcon})
+    .bindPopup('<h1>St. Irmengard-Schulen</h1>').addTo(map)
+
+ 
+
+ L.marker([44.841793,5.552223], {icon: secondIcon})
+    .bindPopup('<h1>Erstbesteigung des Mont Aiguille im Jahr 1492 </h1> ')
+    .addTo(map)
+
+L.marker([45.89345978,7.25323710],  {icon: thirdIcon})
+    .bindPopup('<h1>Im Jahr 1779: Murith bestieg den Mont Vélan (3731 m ü NN.)</h1>').addTo(map)
+    
+L.marker([45.83089911 ,  6.86511039,], {icon: fourthIcon})
+    .bindPopup('<h1>Erstbesteigung des Mont Blanc</h1>').addTo(map)
+
+L.marker([46.5367, 7.9626], {icon: fifthIcon})
+    .bindPopup('<h1>1811: Erstbesteigung der Jungfrau (4158 m. ü. NN.) </h1>   ').addTo(map)
+
+L.marker([46.5899, 8.1182,], {icon: sixtIcon})
+    .bindPopup('<h1>Die Goldenen Jahre des Alpinismus  </h1>  ').addTo(map)
+
+L.marker([45.004722, 6.308611,], {icon: sevendIcon})
+    .bindPopup('<h1> Die Silbernen Jahre des Alpinismus </h1>   ').addTo(map)
+
 	</script>
 
 
@@ -81,7 +118,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',  {
           label: "Deine Koordinaten hier einfügen: ",
           name: "koordinaten",
           required: true,
-          placeholder: "deine koordinaten (Strg+V oder Tippen+Einfügen)"
+          placeholder: "Deine Koordinaten (Strg+V oder Tippen+Einfügen)"
         },
         {
           type: "textarea",

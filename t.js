@@ -15,8 +15,8 @@ L.Control.Coordinates = L.Control.extend({
 		position: 'topright',
 		precision: 4,
 		cityCoord: {
-			Garmisch:[[47.4918, 11.0836], 'Garmisch'],
-			Partenkirchen:[[47.4942, 11.1054], 'Partenkirchen'],
+			GarmischPartenkirchen:[[47.4920, 11.0965], 'Garmisch-Partenkirchen'],
+			Oberammergau:[[47.5976, 11.0646], 'Oberammergau'],
 			Grainau: [[47.4734, 11.0263], 'Grainau'],
 			Mittenwald: [[47.4416, 11.2637], 'Mittenwald'],			
 			Farchant: [[47.5313, 11.1134], 'Farchant'],
@@ -81,7 +81,7 @@ L.Control.Coordinates = L.Control.extend({
 		function makeCityBtn(btn, label, coord) {
 			L.DomUtil.get(btn).innerHTML = label;
 			L.DomUtil.get(btn).addEventListener('click', function(event) {
-				context.flyTo(coord, 18)
+				context.flyTo(coord, 15)
 			})
 
 		}

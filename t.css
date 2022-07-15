@@ -57,7 +57,7 @@ button ::-moz-focus-inner {
 }
 
 .copy-button.active{
-	background-color: #5993f5;
+	background-color: #12a31b;
 	color: #fff;
 }
 .copy-button, .coord-input {
@@ -75,7 +75,7 @@ button ::-moz-focus-inner {
 	outline: 0;
 } 
 .cityBtn {
-    background-color: #5993f5;
+    background-color: #12a31b;
 	color: #fff;
        border: 1px solid rgb(0, 0, 0);
        border: 1px solid rgba(0, 0, 0, 0.1);

@@ -76,6 +76,7 @@ L.Control.Coordinates = L.Control.extend({
 			  }
 		});
 
+
 		return container;
 
 		function makeCityBtn(btn, label, coord) {

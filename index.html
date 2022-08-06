@@ -26,7 +26,8 @@
 	<div id="map"></div>
 
   <!--Haupt-Skript-->
-  
+  <script async src="https://tally.so/widgets/embed.js"></script>
+
 	<script src="t.js"></script>
 	<script>
 	var companies = {
@@ -87,20 +88,42 @@ Object.keys(companies).forEach(function(key, i) {
 
     var popup = L.popup({
           closeButton: true,
-          autoClose: true
+          autoClose: false
         })
         .setLatLng([47.4868, 11.0793])
-        .setContent('<h1>Hallo und Willkomen zur interaktiven Karte!</h1><h2> Hier kannst du alle Gefahrenstellen auf deinem Schulweg in die Karte einzeichnen.</h2><p>Eine Anleitung findest du hier (öffnet sich in einem neuen Fenster):</p>                            <a href="http://mobiapp.robertsussbauer.com/Anleitung.pdf" target="_blank"><p>A N L E I T U N G</p></a>')
+        .setContent('<h1>Hallo und Willkomen zur interaktiven Karte!</h1><h2> Hier kannst du alle Gefahrenstellen auf deinem Schulweg in die Karte einzeichnen.</h2><br><b> 1. Auf Karte tippen <br> 2. Oben-recht auf "Kopieren" tippen <br> 3. Hier Klicken <p>Eine Anleitung findest du hier (öffnet sich in einem neuen Fenster):</p>                            <a href="https://tally.so#tally-open=waQ0Ob&tally-emoji-text=👋&tally-emoji-animation=wave"" target="_blank"><p>Abschicken</p></a>')
         .openOn(map);
 
         
 
 
 	</script>
+<script async src="https://tally.so/widgets/embed.js"></script>
+
+<script>
+window.TallyConfig = {
+  "formId": "waQ0Ob",
+  "popup": {
+    "width": 300,
+    "emoji": {
+      "text": "👋",
+      "animation": "wave"
+    },
+  }
+};
+</script>
+<iframe
+  src="https://tally.so/embed/waQ0Ob?alignLeft=1&hideTitle=1&transparentBackground=1"
+  width="100%"
+  height="200"
+  frameborder="0"
+  marginheight="0"
+  marginwidth="0"
+  title="Gefahrenstellen">
+</iframe>
 
 
-
-     <!-- Read the Formbutton docs at formspree.io/formbutton/docs. See more examples at codepen.io/formspree -->
+     <!-- Read the Formbutton docs at formspree.io/formbutton/docs. See more examples at codepen.io/formspree
   <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
   <script>
     /* paste this line in verbatim */
@@ -137,6 +160,6 @@ Object.keys(companies).forEach(function(key, i) {
         }
       }
     });
-  </script>
+  </script> -->
 </body>
 </html>

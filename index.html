@@ -89,10 +89,11 @@ Object.keys(companies).forEach(function(key, i) {
     var popup = L.popup({
           closeButton: false,
           closeOnClick: false,
-          autoClose: false
+          autoClose: false,
+          minWidth: 50,
         })
         .setLatLng([47.4868, 11.0793])
-        .setContent('<h1>Hallo und Willkomen zur interaktiven Karte!</h1><h2> Hier kannst du alle Gefahrenstellen auf deinem Schulweg in die Karte einzeichnen.</h2><br><b> 1. Auf Karte tippen <br> 2. Oben-recht auf "Kopieren" tippen <br> 3. Hier Klicken <p>Eine Anleitung findest du hier (öffnet sich in einem neuen Fenster):</p>                            <a href="https://tally.so#tally-open=waQ0Ob&tally-emoji-text=👋&tally-emoji-animation=wave"" target="_blank"><p>Abschicken</p></a>')
+        .setContent('<h1>Hallo und Willkomen zur interaktiven Karte!</h1><h2> Hier kannst du alle Gefahrenstellen auf deinem Schulweg in die Karte einzeichnen.</h2>So funktioniert es:<br> 1. Auf Karte tippen <br> 2. Oben-recht auf "Kopieren" tippen <br> 3. Auf das Formular tippen: <a href="https://tally.so#tally-open=waQ0Ob&tally-emoji-text=👋&tally-emoji-animation=wave"" target="_blank"><p>Formular</p></a>')
         .openOn(map);
 
         

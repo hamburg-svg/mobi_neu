@@ -87,7 +87,8 @@ Object.keys(companies).forEach(function(key, i) {
 
 
     var popup = L.popup({
-          closeButton: true,
+          closeButton: false,
+          closeOnClick: false,
           autoClose: false
         })
         .setLatLng([47.4868, 11.0793])
@@ -98,7 +99,7 @@ Object.keys(companies).forEach(function(key, i) {
 
 
 	</script>
-<script async src="https://tally.so/widgets/embed.js"></script>
+<!-- <script async src="https://tally.so/widgets/embed.js"></script>
 
 <script>
 window.TallyConfig = {
@@ -111,7 +112,7 @@ window.TallyConfig = {
     },
   }
 };
-</script>
+</script> -->
 
 
 

@@ -59,7 +59,7 @@ L.Control.Coordinates = L.Control.extend({
 		this._copyBtn = L.DomUtil.create('button', 'copy-button' , container);
 		this._input = L.DomUtil.create('input', 'coord-input' , container);
 		
-		L.DomUtil.get(this._copyBtn).innerHTML = 'Kopieren:';
+		L.DomUtil.get(this._copyBtn).innerHTML = 'Kopieren';
 		L.DomUtil.get(this._copyBtn).addEventListener('click', function(event) {
 			var copyTextarea = document.querySelector('.coord-input');
 			  copyTextarea.select();

@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta autor="sussbauer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gefahrenkarte</title>
+
+    <script src="https://tally.so/widgets/embed.js"></script>
+
+
+    <!-- LK Icon -->
+    <link rel="shortcut icon" href="images/user.jpg" type="image/jpg">
+
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+        integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+        crossorigin=""></script>
+
+    <!-- Leaflet providers plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.13.0/leaflet-providers.min.js"
+        integrity="sha512-5EYsvqNbFZ8HX60keFbe56Wr0Mq5J1RrA0KdVcfGDhnjnzIRsDrT/S3cxdzpVN2NGxAB9omgqnlh4/06TvWCMw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Leaflet fullscreen plugin -->
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'
+        rel='stylesheet' />
+
+    <!-- eigene Stile und Hauptskript -->
+    <link rel="stylesheet" href="assets/css/studyarea.css">
+    <script defer src="assets/js/studyarea.js"></script>
+
+
+    <!--Chart.js einbinden-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!--Haupt-Stylesheet-->
+  <link rel="stylesheet" href="t.css" />
+  
+  <!--Leaflet-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+
+  <script src="http://unpkg.com/leaflet@latest/dist/leaflet.js"></script>
+  <script src="leaflet-providers.js"></script>
+  
+  <!--Content Controll-->
+  <link rel="stylesheet" href="leaflet-control-condended-attribution.css" />
+  <script type="text/javascript" src="leaflet-control-condended-attribution.js"></script>
+
+</head>
+<body class="single-map">
+	<div id="map"></div>
+  <!DOCTYPE html>
+  <html lang="de">
+
+    <iframe data-tally-src="https://tally.so/embed/waQ0Ob?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" width="100%" height="300" frameborder="0" marginheight="0" marginwidth="0" title="Gefahrenstellen"></iframe>
+    
+  
+  <!--Haupt-Skript-->
+  <script async src="https://tally.so/widgets/embed.js"></script>
+	<script src="t.js"></script>
+
+	<script>
+	var companies = {
+		St_Irmengard_Schulen: [47.4957, 11.1037],
+		Grund_Mittelschule_Mittenwald: [47.4376, 11.2622],
+		Werdenfels_Gymnasium: [47.4931, 11.1016],
+		Buergermeister_Schuette_Schule: [47.4977, 11.1103],
+		Zugspitz_Realschule: [47.4963, 11.0982],
+		Beruf_und_Wirtschaftschule: [47.4877, 11.1061],
+		Schule_am_Groeben: [47.4911, 11.0709],
+		Schule_Holz_und_Gestaltung: [47.4928, 11.1101],
+		Grundschule_Kruen: [47.5031, 11.2800],
+		Christopherus_Schule: [47.5215, 11.1122],
+		Kloster_Ettal: [47.5696, 11.0947],
+		Grund_Mittelschule_Oberammergau: [47.5960, 11.0674]
+	};
+	var map = L.map('map',  { condensedAttributionControl: false }
+ ).setView([47.4923, 11.0960], 15);
+
+
+L.tileLayer('https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png',  {
+	maxZoom: 20,
+  
+	attribution: '<a href="http://robertsussbauer.com/" title="My Contact-Page">Sußbauer, 2022</a>, Kartendaten <a href="https://www.openstreetmap.org/copyright">  © OpenStreetMap</a>'
+}).addTo(map)
+
+
+//  custom emblem and prefix
+L.control.condensedAttribution({
+  emblem: '<div class="emblem-wrap"><img src="images/lk_20x20.jpg"></div>',
+  prefix: '<a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>'
+}).addTo(map);
+
+Object.keys(companies).forEach(function(key, i) {
+	var coord = companies[key];
+	var icon = L.divIcon({className: 'comp-label'});
+	var mark = L.marker(coord, {icon: icon}).addTo(map);
+	mark.bindTooltip(key, {permanent: true});
+})
+		var c = new L.Control.Coordinates();
+		c.addTo(map);
+
+		function onMapClick(e) {	
+			c.setCoordinates(e);
+		}
+		function onMapHover(e) {
+			c.bindCircle(e);
+		}
+
+		map.on('click', onMapClick);
+		map.on('mousemove', onMapHover);
+
+
+    var popup = L.popup({
+          closeButton: false,
+          closeOnClick: false,
+          autoClose: false,
+          minWidth: '200px',
+        })
+        .setLatLng([47.4868, 11.0793])
+        .setContent('<h3> Willkommen.</h3><br> <br> Eine Anleitung findest du hier: <br> <a href="anleitung.pdf">Anleitung</a> <br> <br>  Viel Spaß damit!')
+        .openOn(map);
+
+        
+
+
+	</script>
+<!-- <script async src="https://tally.so/widgets/embed.js"></script>
+
+<script>
+window.TallyConfig = {
+  "formId": "waQ0Ob",
+  "popup": {
+    "width": 300,
+    "emoji": {
+      "text": "👋",
+      "animation": "wave"
+    },
+  }
+};
+</script>  -->
+
+
+
+     <!-- Read the Formbutton docs at formspree.io/formbutton/docs. See more examples at codepen.io/formspree
+  <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
+  <script>
+    /* paste this line in verbatim */
+    window.formbutton = window.formbutton || function () {
+      (formbutton.q = formbutton.q || []).push(arguments)
+    };
+    /* customize formbutton below*/
+    formbutton("create", {
+      action: "https://formspree.io/f/mbjwbbwv",
+      title: "Erkläre die Gefahrenstelle:",
+      fields: [{
+          type: "textarea",
+          label: "Deine Koordinaten hier einfügen: ",
+          name: "koordinaten",
+          required: true,
+          placeholder: "Deine Koordinaten (Strg+V oder Tippen+Einfügen)"
+        },
+        {
+          type: "textarea",
+          label: "Was ist hier gefährlich?",
+          name: "nachricht",
+          placeholder: "Erkläre kurz die Gefahrenstelle.",
+        },
+        {
+          type: "submit"
+        }
+      ],
+      styles: {
+        title: {
+          backgroundColor: "#12a31b"
+        },
+        button: {
+          backgroundColor: "#12a31b"
+        }
+      }
+    });
+  </script> -->
+</body>
+</html>

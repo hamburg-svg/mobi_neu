@@ -41,33 +41,6 @@
     <link rel="stylesheet" href="assets/css/studyarea.css">
     <script defer src="assets/js/studyarea.js"></script>
 
-    <!--Leaflet gpx-Plugins hinzu-->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/gpx.min.js"
-        integrity="sha512-BsUtn1Ar2O78Q8YkY1f2pkioHOs8H43KUlP3PHus8lyAMODNq1CmemnU435dFk/SU37OGG+ooxvmEhAcNTEBFQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-
-    <!-- leaflet-elevation -->
-    <link rel="stylesheet" href="https://unpkg.com/@raruto/leaflet-elevation/dist/leaflet-elevation.css" />
-    <script src="https://unpkg.com/@raruto/leaflet-elevation/dist/leaflet-elevation.js"></script>
-
-    <!-- Mini-Map Plugin -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.min.js"
-        integrity="sha512-WL3nAJlWFKoDShduxQRyY3wkBnQsINXdIfWIW48ZaPgYz1wYNnxIwFMMgigzSgjNBC2WWZ8Y8/sSyUU6abuF0g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"
-        integrity="sha512-efbAfGnrnjA+hLwOLu91W034fBGPsMwZMVCTwLUI2PDX/m7rOiuhYZ+D2mZ8rKcpC/I/7pdgoL8T4eYvMHNoQg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!--Leaflet rainviewer plugin-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mwasil/Leaflet.Rainviewer/leaflet.rainviewer.css" />
-    <script src="https://cdn.jsdelivr.net/gh/mwasil/Leaflet.Rainviewer/leaflet.rainviewer.js"></script>
-
-    <!-- Leaflet Print Map Plugin -->
-    <link rel="stylesheet" href="assets/css/Leaflet.BigImage.min.css">
-    <script src="assets/js/Leaflet.BigImage.min.js"></script>
 
     <!--Chart.js einbinden-->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -117,19 +90,7 @@
 	var map = L.map('map',  { condensedAttributionControl: false }
  ).setView([47.4923, 11.0960], 15);
 
-  // L.tileLayer.provider(startLayer ).addTo(map);
-  // let startLayer = L.tileLayer.provider("Basemap mit Beschriftung und Orthopfoto");
 
-  // let layerControl = L.control.layers({
-  //   "Esri.WorldImagery": startLayer,
-  //   "Basemap Grau": L.tileLayer.provider("BasemapAT.grau"),
-    
-  //   "Basemap mit Beschriftung und Orthopfoto": L.layerGroup([
-  //       L.tileLayer.provider("CartoDB.PositronOnlyLabels"),
-  //       L.tileLayer.provider("Esri.WorldImagery")
-  //   ])
-
-  // }).addTo(map);
 L.tileLayer('https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png',  {
 	maxZoom: 20,
   
@@ -137,7 +98,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png',  {
 }).addTo(map)
 
 
-// set custom emblem and prefix
+//  custom emblem and prefix
 L.control.condensedAttribution({
   emblem: '<div class="emblem-wrap"><img src="images/lk_20x20.jpg"></div>',
   prefix: '<a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>'

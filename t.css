@@ -11,10 +11,10 @@
 	height: 100vh;	
 }
 .single-map  {
-	border: 2px solid grey;
-	margin: 0 30px;
+	border: 3px solid grey;
+	margin: 10px 10px;
 	width: 80%;
-	max-width: 950px;
+	/* max-width: 950px; */
 	height: 90vh;
 	max-height: 700px;
 	

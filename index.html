@@ -114,7 +114,8 @@
 		Kloster_Ettal: [47.5696, 11.0947],
 		Grund_Mittelschule_Oberammergau: [47.5960, 11.0674]
 	};
-	var map = L.map('map' ).setView([47.4923, 11.0960], 15);
+	var map = L.map('map',  { condensedAttributionControl: false }
+ ).setView([47.4923, 11.0960], 15);
 
   // L.tileLayer.provider(startLayer ).addTo(map);
   // let startLayer = L.tileLayer.provider("Basemap mit Beschriftung und Orthopfoto");
@@ -131,10 +132,16 @@
   // }).addTo(map);
 L.tileLayer('https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png',  {
 	maxZoom: 20,
+  
 	attribution: '<a href="http://robertsussbauer.com/">Sußbauer, 2022</a>, Kartendaten <a href="https://www.openstreetmap.org/copyright">  © OpenStreetMap</a>'
 }).addTo(map)
 
 
+// set custom emblem and prefix
+L.control.condensedAttribution({
+  emblem: '<div class="emblem-wrap"><img src="images/user.jpg"></div>',
+  prefix: '<a href="https://www.route360.net/" title="Travel time analysis by Motion Intelligence">route360&deg;</a> | <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>'
+}).addTo(map);
 
 Object.keys(companies).forEach(function(key, i) {
 	var coord = companies[key];
@@ -163,7 +170,7 @@ Object.keys(companies).forEach(function(key, i) {
           minWidth: '200px',
         })
         .setLatLng([47.4868, 11.0793])
-        .setContent('<h3> Hallo.</h3>So funktioniert es:<br> <br> 1. Ort wählen <br><br> 2. Auf "Kopieren" tippen <br><br> 3. <a href="https://tally.so#tally-open=waQ0Ob&tally-emoji-text=👋&tally-emoji-animation=wave"" target="_blank"><p>Formular</p></a>')
+        .setContent('<h3> Willkommen.</h3><br> <br> Eine Anleitung findest du hier: <br> <a href="anleitung.pdf">Anleitung</a> <br> <br>  Viel Spaß damit!')
         .openOn(map);
 
         

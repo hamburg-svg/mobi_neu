@@ -10,8 +10,14 @@
 .single-map #map {
 	height: 100vh;	
 }
-.single-map {
-	margin: 0;
+.single-map  {
+	border: 2px solid grey;
+	margin: 0 30px;
+	width: 80%;
+	max-width: 950px;
+	height: 90vh;
+	max-height: 700px;
+	
 }
 #googleform {
 	margin: 0 30px;

@@ -133,14 +133,14 @@
 L.tileLayer('https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png',  {
 	maxZoom: 20,
   
-	attribution: '<a href="http://robertsussbauer.com/">Sußbauer, 2022</a>, Kartendaten <a href="https://www.openstreetmap.org/copyright">  © OpenStreetMap</a>'
+	attribution: '<a href="http://robertsussbauer.com/" title="My Contact-Page">Sußbauer, 2022</a>, Kartendaten <a href="https://www.openstreetmap.org/copyright">  © OpenStreetMap</a>'
 }).addTo(map)
 
 
 // set custom emblem and prefix
 L.control.condensedAttribution({
-  emblem: '<div class="emblem-wrap"><img src="images/user.jpg"></div>',
-  prefix: '<a href="https://www.route360.net/" title="Travel time analysis by Motion Intelligence">route360&deg;</a> | <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>'
+  emblem: '<div class="emblem-wrap"><img src="images/lk_20x20.jpg"></div>',
+  prefix: '<a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>'
 }).addTo(map);
 
 Object.keys(companies).forEach(function(key, i) {
